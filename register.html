@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Registration Form</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <div class="container-margin">
+        <header class="header">
+          <div class="logo">
+            <img src="logo.jpg" alt="leaning" />
+          </div>
+          <div class="title">
+            <h1>Student Registration Form</h1>
+            <p>
+              Fill out the form to apply for the training courses. You can
+              consider your application accepted after you receive a
+              confirmation email
+            </p>
+          </div>
+        </header>
+        <section id="student-info">
+          <h2>Student Information</h2>
+          <form id="registrationForm">
+            <div>
+              <input
+                type="text"
+                class="student-input"
+                id="firstName"
+                name="name"
+                placeholder="Enter your First Name"
+                required
+              />
+              <input
+                type="text"
+                class="student-input"
+                id="middleName"
+                name="name"
+                placeholder="Enter your Middle Name"
+                required
+              />
+              <input
+                type="text"
+                class="student-input"
+                id="lastName"
+                name="name"
+                placeholder="Enter your Last Name"
+                required
+              />
+              <input
+                type="date"
+                id="date"
+                name="date"
+                placeholder="Date of Birth"
+                required
+              />
+              <input
+                type="text"
+                id="studentID"
+                name="name"
+                placeholder="Student ID"
+                required
+              />
+            </div>
+          </form>
+        </section>
+        <section id="address">
+          <h2>Address</h2>
+          <form id="addressForm">
+            <div class="address">
+              <input
+                type="text"
+                id="streetAdd"
+                name="name"
+                placeholder="Street Address"
+                required
+              />
+              <input
+                type="text"
+                class="address-input"
+                id="city"
+                name="name"
+                placeholder="City"
+                required
+              />
+              <input
+                type="text"
+                class="address-input"
+                id="state"
+                name="name"
+                placeholder="State / Province"
+                required
+              />
+              <select title="Country" id="country" required>
+                <option value="Country">Country</option>
+                <option value="Ghana">Ghana</option>
+                <option value="Kenya">Kenya</option>
+                <option value="Nigeria">Nigeria</option>
+              </select>
+              <input
+                type="text"
+                class="add-form"
+                id="ZIP"
+                name="name"
+                placeholder="ZIP Code"
+                required
+              />
+            </div>
+          </form>
+        </section>
+        <section id="contact">
+          <h2>Contact Information</h2>
+          <form id="contactForm">
+            <div class="contact">
+              <input
+                type="email"
+                class="contact-info"
+                id="email"
+                name="email"
+                placeholder="E-mail"
+                required
+              />
+              <input
+                type="password"
+                class="contact-info"
+                id="password"
+                name="password"
+                placeholder="Password"
+                required
+              />
+            </div>
+          </form>
+        </section>
+        <section id="course">
+          <h2>Courses</h2>
+          <form id="courseForm">
+            <div>
+              <div class="course">
+                <div class="add-courses">+ Add new record</div>
+                <div>
+                  <select title="course" class="course-input" id="course">
+                    <option value="course">Course</option>
+                    <option value="computer">Computer Science</option>
+                    <option value="mechanical">Mechanical Engineering</option>
+                    <option value="civil">Civil Engineering</option>
+                  </select>
+                  <select title="level" class="course-input" id="level">
+                    <option value="level">Level</option>
+                    <option value="hundred">100L</option>
+                    <option value="twoHundred">200L</option>
+                    <option value="threeHundred">300L</option>
+                  </select>
+                  <select title="language" class="course-input" id="language">
+                    <option value="language">Language</option>
+                    <option value="english">English</option>
+                    <option value="french">French</option>
+                    <option value="arabic">Arabic</option>
+                  </select>
+                  <select title="start" class="course-input" id="start">
+                    <option value="start">Start Date</option>
+                    <option value="2014">2014</option>
+                    <option value="2015">2015</option>
+                    <option value="2016">2016</option>
+                  </select>
+                </div>
+              </div>
+              <div>
+                <textarea
+                  class="textarea"
+                  title="comments"
+                  id="comments"
+                  cols="30"
+                  rows="10"
+                >
+Comments</textarea
+                >
+              </div>
+              <div>
+                <input class="submit" type="submit" value="SEND REQUEST" />
+              </div>
+            </div>
+          </form>
+          <div id="preview"></div>
+        </section>
+      </div>
+    </div>
+    <script>
+      // Get a reference to the form elements
+      const registrationForm = document.getElementById("registrationForm");
+      const addressForm = document.getElementById("addressForm");
+      const contactForm = document.getElementById("contactForm");
+      const courseForm = document.getElementById("courseForm");
+      // Attach an event listener to the form submit event
+      registrationForm.addEventListener("submit", function (event) {
+        event.preventDefault(); // Prevent form submission
+
+        // Get the form values
+        const firstName = document.getElementById("firstName").value;
+        const middleName = document.getElementById("middleName").value;
+        const lastName = document.getElementById("lastName").value;
+        const dateOfBirth = document.getElementById("date").value;
+        const studentID = document.getElementById("studentID").value;
+
+        // Generate the preview HTML
+        const previewHTML = `
+    <h2>Preview</h2>
+    <p><strong>Name:</strong> ${firstName} ${middleName} ${lastName}</p>
+    <p><strong>Date of Birth:</strong> ${dateOfBirth}</p>
+    <p><strong>Student ID:</strong> ${studentID}</p>
+  `;
+
+        // Display the preview HTML
+        document.getElementById("preview").innerHTML = previewHTML;
+      });
+
+      addressForm.addEventListener("submit", function (event) {
+        event.preventDefault(); // Prevent form submission
+
+        // Get the form
+        values;
+        const streetAddress = document.getElementById("streetAdd").value;
+        const city = document.getElementById("city").value;
+        const state = document.getElementById("state").value;
+        const country = document.getElementById("country").value;
+        const zipCode = document.getElementById("ZIP").value;
+        // Append the address details to the preview HTML
+        const addressPreviewHTML = `
+    <p><strong>Address:</strong> ${streetAddress}, ${city}, ${state}, ${country}, ${zipCode}</p>
+  `;
+        // Append the address details to the existing preview HTML
+        const currentPreviewHTML = document.getElementById("preview").innerHTML;
+        const updatedPreviewHTML = currentPreviewHTML + addressPreviewHTML;
+
+        // Display the updated preview HTML
+        document.getElementById("preview").innerHTML = updatedPreviewHTML;
+      });
+
+      contactForm.addEventListener("submit", function (event) {
+        event.preventDefault(); // Prevent form submission
+
+        // Get the form values
+        const email = document.getElementById("email").value;
+        const password = document.getElementById("password").value;
+
+        // Append the contact information to the preview HTML
+        const contactPreviewHTML = `
+<p><strong>Email:</strong> ${email}</p>
+<p><strong>Password:</strong> ${password}</p>
+`;
+        // Append the contact details to the existing preview HTML
+        const currentPreviewHTML = document.getElementById("preview").innerHTML;
+        const updatedPreviewHTML = currentPreviewHTML + contactPreviewHTML;
+
+        // Display the updated preview HTML
+        document.getElementById("preview").innerHTML = updatedPreviewHTML;
+      });
+
+      courseForm.addEventListener("submit", function (event) {
+        event.preventDefault(); // Prevent form submission
+
+        // Get the form values
+        const course = document.getElementById("course").value;
+        const level = document.getElementById("level").value;
+        const language = document.getElementById("language").value;
+        const startDate = document.getElementById("start").value;
+        const comments = document.getElementById("comments").value;
+
+        // Append the course details to the preview HTML
+        const coursePreviewHTML = `
+<p><strong>Course:</strong> ${course}</p>
+<p><strong>Level:</strong> ${level}</p>
+<p><strong>Language:</strong> ${language}</p>
+<p><strong>Start Date:</strong> ${startDate}</p>
+<p><strong>Comments:</strong> ${comments}</p>
+`;
+        // Append the course details to the existing preview HTML
+        const currentPreviewHTML = document.getElementById("preview").innerHTML;
+        const updatedPreviewHTML = currentPreviewHTML + coursePreviewHTML;
+
+        // Display the updated preview HTML
+        document.getElementById("preview").innerHTML = updatedPreviewHTML;
+      });
+    </script>
+  </body>
+</html>

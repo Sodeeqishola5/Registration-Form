@@ -1,0 +1,281 @@
+body {
+  background: rgba(226, 104, 47, 0.946);
+  padding: 20px;
+  font-family: "Roboto Mono", monospace;
+}
+
+.container {
+  padding: 10px;
+  background: #fff;
+  box-shadow: 4px 4px 5px #888;
+}
+
+.container-margin {
+  padding-left: 10px;
+  border-left: 1px solid rgba(214, 205, 205, 0.794);
+  border-right: 1px solid rgba(214, 205, 205, 0.794);
+}
+.header {
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+}
+img {
+  margin: 20px;
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+}
+
+.title {
+  width: 90%;
+}
+
+p {
+  color: rgba(40, 37, 37, 0.503);
+}
+
+h2 {
+  font-size: 20px;
+  color: #888;
+}
+
+.student-input {
+  margin-bottom: 10px;
+  padding: 5px;
+  width: 30%;
+}
+
+#date {
+  padding: 5px;
+  width: 45%;
+}
+
+#studentID {
+  padding: 6px;
+  width: 46.5%;
+}
+
+#streetAdd {
+  padding: 5px;
+  width: 93.8%;
+}
+
+.address-input {
+  margin: 10px 0 5px 0;
+  padding: 5px;
+  width: 46%;
+}
+
+#country {
+  margin: 10px 0 5px 0;
+  padding: 5px;
+  width: 47%;
+}
+#ZIP {
+  margin: 10px 0 5px 0;
+  padding: 5px;
+  width: 46%;
+}
+
+.contact-info {
+  margin: 10px 0 5px 0;
+  padding: 5px;
+  width: 46%;
+}
+
+.course {
+  padding: 3px;
+  max-width: 94.8%;
+  background: rgba(214, 205, 205, 0.794);
+  display: block;
+  border: 1px solid rgba(173, 163, 163, 0.692);
+}
+
+.add-courses {
+  width: 10%;
+  height: 10%;
+  color: black;
+  font-size: 12px;
+  border-radius: 5px;
+  background: #888;
+  padding: 5px;
+  cursor: pointer;
+}
+
+.course-input {
+  margin-top: 3px;
+  padding: 5px;
+  width: 8%;
+}
+
+.textarea {
+  margin-top: 15px;
+  padding: 5px;
+  color: rgba(39, 36, 36, 0.692);
+  width: 94.6%;
+}
+
+.submit {
+  margin: 10px auto;
+  padding: 5px;
+  width: 95.5%;
+  color: #fff;
+  font-size: 13px;
+  font-weight: bold;
+  background: rgba(21, 170, 220, 0.915);
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.submit:hover {
+  background: rgba(10, 121, 159, 0.915);
+}
+
+.submit:focus {
+  outline: none;
+}
+
+@media screen and (max-width: 1024px) {
+  .header {
+    width: 90%;
+  }
+  .title {
+    width: 90%;
+  }
+
+  img {
+    margin: 10px;
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+  }
+
+  .student-input {
+    width: 29.9%;
+  }
+
+  #date {
+    width: 46.3%;
+  }
+
+  #streetAdd {
+    width: 96.5%;
+  }
+
+  .address-input {
+    width: 46.5%;
+  }
+
+  #country {
+    width: 47.6%;
+  }
+  #ZIP {
+    width: 47.6%;
+  }
+
+  .contact-info {
+    width: 46.4%;
+  }
+
+  .course {
+    max-width: 96.7%;
+  }
+
+  .add-courses {
+    width: 17%;
+  }
+
+  .course-input {
+    width: 13%;
+  }
+
+  .textarea {
+    width: 96%;
+  }
+
+  .submit {
+    width: 97.5%;
+  }
+}
+
+@media screen and (max-width: 550px) {
+  .student-input {
+    width: 30%;
+  }
+
+  #date {
+    width: 29.9%;
+  }
+
+  .address {
+    display: flex;
+    flex-direction: column;
+  }
+
+  #streetAdd {
+    width: 65.5%;
+  }
+
+  #city {
+    width: 65.5%;
+  }
+
+  #state {
+    width: 65.5%;
+  }
+
+  #country {
+    width: 70%;
+  }
+
+  #ZIP {
+    width: 65.5%;
+  }
+
+  .contact {
+    display: flex;
+    flex-direction: column;
+  }
+  .contact-info {
+    width: 65.5%;
+  }
+
+  .course {
+    max-width: 96.7%;
+  }
+
+  .add-courses {
+    width: 35%;
+  }
+
+  .course-input {
+    width: 22%;
+  }
+
+  .textarea {
+    width: 96%;
+  }
+
+  .submit {
+    width: 97.5%;
+  }
+
+  .student-input {
+    width: 29.9%;
+  }
+
+  #studentID {
+    width: 65.5%;
+  }
+}
+
+@media screen and (max-width: 550px) {
+  .header {
+    display: block;
+  }
+
+  .add-courses {
+    width: 55%;
+  }
+}
